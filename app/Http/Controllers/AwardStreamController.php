@@ -19,7 +19,11 @@ class AwardStreamController extends Controller
         $this->middleware('auth');
     }
 
-
+    /**
+     * 用户积分流水
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function awardstream(Request $request){
         $request->validate([
             'uid' => 'required|numeric',

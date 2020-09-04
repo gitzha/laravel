@@ -19,11 +19,19 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * 用户关系
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function user(){
         $userlist = User::with('allChildren')->get();
         return view('user',compact('userlist'));
     }
 
+    /**
+     * 用户信息
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function userinfo(){
         $userinfo = DB::table('users')->get();
         return view('userinfo',compact('userinfo'));
