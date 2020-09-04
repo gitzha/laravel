@@ -12,14 +12,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         $data = \Illuminate\Support\Facades\DB::table('users')->limit(20)->get();
-        if(empty($data)){
+        if($data->isEmpty()){
             factory(App\User::class, 20)->create()->each(function ($user) {
                 $user->save(factory(App\User::class)->make());
             });
         }
 
 
-        if (!empty($data)){
+        if (!$data->isEmpty()){
             foreach ($data as $k=>$v){
                 $insert = [
                     'name'=>\Illuminate\Support\Str::random(4),
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
             }
         }
         $data = \Illuminate\Support\Facades\DB::table('users')->get();
-        if(!empty($data)){
+        if(!$data->isEmpty()){
             foreach ($data as $k=>$v){
                 $invite_code = createCode($v->id,6);
                 \Illuminate\Support\Facades\DB::table('users')->where('id',$v->id)->update(['invite_code'=>$invite_code]);
