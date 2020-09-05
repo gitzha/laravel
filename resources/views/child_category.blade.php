@@ -1,4 +1,4 @@
-<li>{{ $child_category->name }}</li>
+<li>|____{{ $child_category->id }}_{{ $child_category->name }}</li>
 @if ($child_category->allChildren)
     <ul>
         @foreach ($child_category->allChildren as $childCategory)

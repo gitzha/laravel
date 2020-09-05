@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
          $this->call([
              UserSeeder::class,
              AwardConfig::class,
-             AwardStreamSeeder::class
+             UserMoreSeeder::class,
+             AwardStreamSeeder::class,
          ]);
     }
 }

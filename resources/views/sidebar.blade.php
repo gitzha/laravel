@@ -1,6 +1,6 @@
-<aside class="main-sidebar">
+<aside class="main-sidebar" style="text-align: center">
     <section class="sidebar">
-        <ul class="sidebar-menu" data-widget="tree">
+        <ul class="sidebar-menu nav metismenu" data-widget="tree">
             <li class="">
                 <a href="{{route('home')}}">
                     <i class="icon icon-dashboard"></i>

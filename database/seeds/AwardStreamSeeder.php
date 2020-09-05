@@ -19,14 +19,16 @@ class AwardStreamSeeder extends Seeder
                 'change_num'=>10,
                 'source_type'=>1,
                 'source_uid'=>$v->id,
-                'created_at'=>date('Y-m-d H:i:s'),
+                'created_at' =>date('Y-m-d H:i:s'),
+                'updated_at' =>date('Y-m-d H:i:s')
             ];
             $insert1 = [
                 'uid'=>$v->id,
                 'change_num'=>5,
                 'source_type'=>2,
                 'source_uid'=>$v->pid,
-                'created_at'=>date('Y-m-d H:i:s'),
+                'created_at' =>date('Y-m-d H:i:s'),
+                'updated_at' =>date('Y-m-d H:i:s')
             ];
             \Illuminate\Support\Facades\DB::table('award_streams')->insert([$insert,$insert1]);
 

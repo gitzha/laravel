@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
+        <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/css/animate.css')}}" rel="stylesheet">
+        <link href="{{ asset('assets/css/style.css')}}" rel="stylesheet">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -81,18 +84,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    welcome
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="links" style="font-size: 20px;color: #1ab394;font-weight: 800;">
+                    点击测试邀请好友链接： <a class="btn btn-primary" href="{{route('register',array('invite_code'=>$invite_code))}}">注册</a>
                 </div>
             </div>
         </div>

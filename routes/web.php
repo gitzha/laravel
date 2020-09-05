@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
 
@@ -30,3 +30,4 @@ Route::post('/userinfo', 'UserController@userinfo')->name('userinfo');
 Route::get('/awardstream', 'AwardStreamController@awardstream')->name('awardstream');
 Route::post('/awardstream', 'AwardStreamController@awardstream')->name('awardstream');
 Route::get('/getUserAward', 'AwardStreamController@getUserAward')->name('getUserAward');
+Route::get('/', 'HomeController@welcome')->name('welcome');

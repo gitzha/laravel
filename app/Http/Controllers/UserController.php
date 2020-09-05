@@ -34,6 +34,10 @@ class UserController extends Controller
      */
     public function userinfo(){
         $userinfo = DB::table('users')->get();
+        foreach ($userinfo as $k=>$v){
+            $count = DB::table('users')->where('pid',$v->id)->count('id');
+            $userinfo[$k]->invite_num=$count;
+        }
         return view('userinfo',compact('userinfo'));
     }
 

@@ -33,7 +33,6 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    public $invitecode;
 
     /**
      * Create a new controller instance.
@@ -43,7 +42,6 @@ class RegisterController extends Controller
     public function __construct(Request $request)
     {
 
-        $this->invitecode = $request->input('invite_code');
         $this->middleware('guest');
     }
 
@@ -58,7 +56,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:3', 'confirmed'],
         ]);
     }
 
