@@ -28,6 +28,7 @@ class Kernel extends ConsoleKernel
     {
 //         $schedule->command('inspire')->hourly();
         $schedule->command('getUserAward')->weeklyOn(1);//每周一执行
+
     }
 
     /**

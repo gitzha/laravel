@@ -6,6 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
+
 class UserAwards extends Command
 {
     /**
@@ -49,6 +50,10 @@ class UserAwards extends Command
             ->orderByDesc('total_change_num')
             ->limit(10)
             ->get();
+
+
+
+
         Log::info('上周用户积分增长最大的十个用户',[$data]);
         $this->info('执行结束...');
     }
